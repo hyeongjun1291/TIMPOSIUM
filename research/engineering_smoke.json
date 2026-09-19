@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-19",
+  "evidence_kind": "manually_transcribed_visible_browser_output",
+  "development_only": true,
+  "model": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC",
+  "runtime": "WebLLM 0.2.85",
+  "origin": "http://127.0.0.1:8765",
+  "input": {
+    "question": "우리 동네 소식지의 읽기 편함을 높이는 방법 두 가지를 제안해 줘.",
+    "context": "어르신의 지역어는 그대로 유지해야 한다. 어린 독자도 이해할 수 있으면 좋겠다.",
+    "concepts": "읽기 편함 = 지역어를 지우지 않고 뜻을 이해할 수 있음"
+  },
+  "runs": [
+    {
+      "version": "context-guard-v2",
+      "observed_language": "English",
+      "status": "원래 답변 유지",
+      "issue_count": 0,
+      "draft_and_final": "To improve the readability of your neighborhood newspaper, you can suggest two methods:\n\n1. Continue using local dialects to maintain familiarity for both elders and younger readers.\n2. Ensure that the text is accessible so that even young readers can understand it.\n\nThese suggestions aim to make reading easier while still allowing people from different generations to enjoy the content."
+    },
+    {
+      "version": "context-guard-v2.1",
+      "observed_language": "한국어",
+      "status": "원래 답변 유지",
+      "issue_count": 0,
+      "draft_and_final": "1. 지역어를 일부러 유지하면서도, 어린 독자들도 이해할 수 있도록 편집을 해주세요.\n2. 소식지의 내용이 어린이들이 쉽게 읽을 수 있도록 수정해주세요."
+    }
+  ],
+  "human_effectiveness_ratings": null
+}

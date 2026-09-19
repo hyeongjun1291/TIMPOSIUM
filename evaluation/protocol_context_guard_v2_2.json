@@ -1,0 +1,39 @@
+{
+  "id": "context-guard-v2.2",
+  "amendment": "User requested single-input automation. Question is preserved verbatim and segmented deterministically into quoted anchors; no inferred user definitions or demographic facts. Hangul selects Korean, otherwise English. Answer action prepares default browser model automatically. Existing core comparison conditions remain API-only.",
+  "status": "engineering_prototype_not_confirmatory",
+  "date": "2026-09-19",
+  "predecessor": {
+    "path": "evaluation/protocol_context_guard_v2_1.json",
+    "sha256": "223aebbac64826fc5563e19f7860e491cf4a5d29446ac1d5c976fbdd93bceac2"
+  },
+  "reason": "Ground audit in exact input evidence, allow clarification and conservative retention; add portable browser inference.",
+  "base_model": "Qwen2.5-1.5B-Instruct-q4f16_1-MLC",
+  "smoke_model": "Qwen2.5-0.5B-Instruct-q4f16_1-MLC",
+  "runtime": "WebLLM 0.2.85",
+  "license": "Qwen2.5 0.5B/1.5B Apache-2.0; WebLLM Apache-2.0",
+  "download_policy": "User answer action or model preparation action downloads approximately 1GB default model if needed; UI states this before action. No paid API.",
+  "estimated_download": "0.5B approximately 0.5 GB; 1.5B approximately 1 GB, not exact measured sizes",
+  "generation": {
+    "temperature": 0.2,
+    "seed": 42,
+    "maxTokens": 768,
+    "maxInputChars": 2400
+  },
+  "conditions": [
+    "baseline",
+    "generic",
+    "grounded"
+  ],
+  "categories": [
+    "meaning_shift",
+    "imposed_frame",
+    "context_omission",
+    "unwarranted_certainty"
+  ],
+  "audit_gate": "Every issue requires exact draft substring and exact input-anchor substring. This is provenance validation, not semantic truth verification.",
+  "revision_gate": "All user-defined terms must remain as literal substrings; model verification must explicitly accept. Otherwise preserve original and display candidate separately.",
+  "human_evidence": "none",
+  "claim_limit": "Does not establish reduced social bias, causal training mechanism, fairness, or an independent critic.",
+  "model_revision_limit": "Runtime version pinned; upstream prebuilt model URLs may change. Exact model tensor revision is not frozen; record model id and date. Not sufficient for confirmatory reproducibility."
+}

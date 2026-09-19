@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="사용자의 의미를 지키는 LLM 답변 비교 실험실"><title>언어 모델 실행</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%231d594b'/%3E%3Cpath d='M13 11H9v18h4m14-18h4v18h-4M17 20h6' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"><script src="vendor/webllm-0.2.85.js" defer></script><script src="core.js" defer></script><script src="runtime.js" defer></script><script src="examples.js" defer></script><script src="app.js" defer></script></head>
+<body>
+<header><strong>언어 모델 실행</strong><button id="connect" class="quiet">실행 설정</button></header>
+<main>
+<div class="workspace">
+<section class="input-panel" aria-labelledby="input-title"><div class="panel-heading"><h2 id="input-title"><span class="section-num">01</span> 입력</h2></div>
+
+<form id="question-form"><label for="question">입력 텍스트</label><textarea id="question" rows="7" required maxlength="2400" placeholder="질문 입력"></textarea><div hidden><select id="language"><option>한국어</option><option>English</option></select><select id="mode"><option value="grounded">자동 점검</option></select><textarea id="context"></textarea><textarea id="concepts"></textarea></div><button type="submit" class="primary" id="run">실행</button><button type="button" id="stop" class="quiet" hidden>분석 중단</button><p class="run-note" id="run-note">첫 실행 시 모델을 자동으로 다운로드합니다(약 1GB). 인터넷과 WebGPU가 필요합니다.</p><p id="error" role="alert" hidden></p></form>
+</section>
+<section class="results" aria-labelledby="result-title"><div class="panel-heading"><h2 id="result-title"><span class="section-num">02</span> 출력 비교</h2><span class="result-badge" id="result-badge">입력 대기</span></div>
+<dl class="run-metadata" aria-label="표시된 결과의 실행 정보"><div><dt>조건</dt><dd id="meta-mode">작성 예시</dd></div><div><dt>모델</dt><dd id="meta-model">실제 추론 없음</dd></div><div><dt>호출 수</dt><dd id="meta-calls">—</dd></div><div><dt>추론 시간</dt><dd id="meta-time">—</dd></div></dl><div id="progress" role="status" aria-live="polite" hidden></div>
+<div class="comparison"><article class="answer original"><div class="answer-heading"><h3>초안</h3><span>DRAFT</span></div><div id="draft" class="answer-text"></div></article><article class="answer revised"><div class="answer-heading"><h3>최종 출력</h3><span>OUTPUT</span></div><div id="final" class="answer-text"></div></article></div>
+<div class="audit-heading"><h3>검토 근거</h3><span id="issue-count"></span></div><div id="issues"></div><p id="questions" class="notice" hidden></p><p id="verdict" class="notice" hidden></p><details id="candidate-box" hidden><summary>보류된 수정안 보기</summary><p id="candidate" class="answer-text"></p></details><div class="result-bottom"><button id="export" class="quiet" disabled>실행 기록 저장</button><button id="copy" class="quiet">최종 출력 복사</button></div>
+</section></div>
+</main>
+<dialog id="settings"><form method="dialog"><div class="dialog-heading"><h2>내 기기에서 AI 실행</h2><button aria-label="닫기" class="close">×</button></div></form>
+<p>HTML을 열고 모델을 준비하면 서버·API 키 없이 직접 분석합니다. 처음에는 인터넷으로 모델 파일을 받습니다.</p>
+<label for="backend">실행 방식</label><select id="backend"><option value="browser">브라우저 안에서 실행 · 설치 불필요</option><option value="ollama">기존 Ollama 연결 · 로컬 실행기 필요</option></select>
+<div id="connection-status" class="connection-status" role="status" aria-live="polite">AI 준비를 누르면 호환성을 확인합니다.</div>
+<div id="browser-options"><label for="browser-model">브라우저 모델</label><select id="browser-model"><option value="balanced">Qwen 2.5 · 1.5B — 기본 / 약 1GB 다운로드</option><option value="small">Qwen 2.5 · 0.5B — 경량 / 약 0.5GB 다운로드</option></select><p class="field-note">실제 다운로드·메모리는 기기에 따라 다릅니다. 0.5B는 한국어와 점검 정확도가 특히 제한적입니다. WebGPU를 지원하는 최신 데스크톱 Chrome·Edge를 권장합니다.</p><button id="load-model" class="primary">모델 다운로드 및 준비</button><p class="field-note">다운로드 출처: Hugging Face / MLC. 질문은 전송하지 않습니다. 모델 파일은 브라우저 캐시에 보관될 수 있습니다. 완전 오프라인 재실행은 보장하지 않습니다.</p></div>
+<div id="ollama-options" hidden><label for="model">설치된 모델 이름</label><input id="model" placeholder="Ollama 모델 이름" autocomplete="off"><button id="refresh" class="primary">연결 확인</button></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body></html>

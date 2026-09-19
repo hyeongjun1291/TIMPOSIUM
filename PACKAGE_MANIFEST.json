@@ -1,0 +1,78 @@
+{
+  "Context-Lab.html": {
+    "sha256": "bef76019d3ca07de742c3ff205bff551c1eb9734438bd537527f92e22a1f5a7c",
+    "bytes": 6122286
+  },
+  "README.md": {
+    "sha256": "eae1a02377c5f65ec36d33700400ef26765838b90606fab06503fbcc3dc57c02",
+    "bytes": 4576
+  },
+  "server.py": {
+    "sha256": "457fba48fb93b6fdc43fce0e817bceaca7cf09c9f6eb204ec3aac5e5f0f4acaf",
+    "bytes": 4606
+  },
+  "start-mac.command": {
+    "sha256": "7e959403cd313163e10d23c7b815ae23034b7110b9f7e2961998a2a701d33364",
+    "bytes": 223
+  },
+  "start-windows.bat": {
+    "sha256": "8aaff0055dfbd0a21143faa1678a2818e2d75a6a4498b384904a3c0994d8ab0c",
+    "bytes": 298
+  },
+  "THIRD_PARTY_NOTICES.md": {
+    "sha256": "fc7addd498dfa526cc97063106652100d733b1639b32464137405d5b5163ded3",
+    "bytes": 1223
+  },
+  "research/engineering_smoke.json": {
+    "sha256": "2ab075394e267f4a1ad63a9814b4c9e0deafdcb759b2f1e92e89541dfe26a607",
+    "bytes": 1599
+  },
+  "research/간단한_논문.md": {
+    "sha256": "1bcb4444493ea64ba57101cdbb74d4dac22ed7febe1b102a1ab873041ebf2e06",
+    "bytes": 8415
+  },
+  "research/검증_기록.md": {
+    "sha256": "5a01dc6fdaa0f49b15c160737daab1f01cf4931ee02c737daa4d58787d8587ce",
+    "bytes": 4173
+  },
+  "research/논문기반_입력예시.md": {
+    "sha256": "bb8961aecac2274af8ebf7de3d90f809e777869bcb8333b68a3517243d7e0b62",
+    "bytes": 6311
+  },
+  "research/모델_구조와_언어편중_평가.md": {
+    "sha256": "78d2f0e8dd57a74471d6f64bdb42a0c2f92c5e9cbe7e12071837678915991eb1",
+    "bytes": 5412
+  },
+  "research/모델_설명과_방법론.md": {
+    "sha256": "98469cc37865a6681eecb91188d571e5f465fc6648773529964fae1061e95ad0",
+    "bytes": 8305
+  },
+  "research/선행연구_검토.md": {
+    "sha256": "4254dbd439bb5bee31118d26dcecf01cb876a77a8648e4f01ec68ae720500bae",
+    "bytes": 8285
+  },
+  "research/연구_보고서.md": {
+    "sha256": "7a503c80cab9951021167edd8fc4e1c159034195aa913c07dadad0261cdb6d6b",
+    "bytes": 11352
+  },
+  "evaluation/protocol_context_guard_v2.json": {
+    "sha256": "47593b1357d2b8d259620add6b58d36387af6f5fbf4d1700da2749a738d61e6b",
+    "bytes": 1846
+  },
+  "evaluation/protocol_context_guard_v2_1.json": {
+    "sha256": "223aebbac64826fc5563e19f7860e491cf4a5d29446ac1d5c976fbdd93bceac2",
+    "bytes": 2131
+  },
+  "evaluation/protocol_context_guard_v2_2.json": {
+    "sha256": "4921c8e397aef9dd0bc7aa5c504233fc0c24e0f25e451365524a79a18d5f08bb",
+    "bytes": 2233
+  },
+  "dist/vendor/LICENSE-loglevel.txt": {
+    "sha256": "18e8cf5f0dbaf13d9562e93b9bef79aff2acff18fab698c2d589d2159375a1f9",
+    "bytes": 1075
+  },
+  "dist/vendor/LICENSE-WebLLM.txt": {
+    "sha256": "d412ab9d5ac17e6931705aac01e5a0d323da5acd2e89a2c19aa8fc05becc59ad",
+    "bytes": 11737
+  }
+}
